@@ -17,7 +17,6 @@ public class Entry
 
   public void DisplayEnteries()
   {
-    Console.WriteLine();
     foreach (string journal in journalEntries)
     {
       Console.WriteLine(journal + "\n");
@@ -30,9 +29,7 @@ public class Entry
 
       if (!File.Exists(_filePath))
       {
-        Console.WriteLine();
         Console.WriteLine($"{_filePath} does not exist");
-        Console.WriteLine();
         return;
       }
       using StreamReader _streamReader = new(_filePath, Encoding.UTF8);
