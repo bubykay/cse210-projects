@@ -6,7 +6,6 @@ class Program
 
     static void Main(string[] args)
     {
-        int option;
         Journal journal = new();
         PromptGenerator promptGenerator = new();
 
@@ -14,7 +13,7 @@ class Program
         {
             journal.JournalMenu();
 
-            if (!int.TryParse(Console.ReadLine(), out option))
+            if (!int.TryParse(Console.ReadLine(), out int option))
             {
                 Console.WriteLine("\nInvalid input. Please enter a number between 1 and 5.\n");
                 continue;
