@@ -14,10 +14,10 @@ class Scripture
     _reference = reference;
   }
 
-  public void HideRandomWord(int _numberToHide)
+  public void HideRandomWord(int numberToHide)
   {
     Random random = new();
-    for (int i = 0; i < _numberToHide; i++)
+    for (int i = 0; i < numberToHide; i++)
     {
       if (IsCompletelyHidden())
       {
@@ -45,6 +45,8 @@ class Scripture
       Console.Write(word.GetDisplay() + " ");
     }
     Console.WriteLine();
+    Console.WriteLine();
+    Console.WriteLine("Press enter to continue or type \"quit\" to finish");
   }
   public bool IsCompletelyHidden()
   {
