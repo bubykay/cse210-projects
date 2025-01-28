@@ -23,4 +23,9 @@ class Order
 
   public decimal TotalCost() => _customer.IsUSAAddress() ? OrderCost() + 5 : OrderCost() + 35;
 
+  public string CustomerName()
+  {
+    return _customer.CustomerName();
+  }
+
 }

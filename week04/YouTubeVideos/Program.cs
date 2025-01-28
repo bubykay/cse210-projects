@@ -20,17 +20,22 @@ class Program
         Video video3 = new Video("Web Development Basics", "Jane Smith", 45);
         video3.AddComment("Eve", "This is exactly what I needed");
         video3.AddComment("Charlie", "Fantastic content");
+        video3.AddComment("Roland", "Fantastic content. Keept it up bro");
+        video3.AddComment("Charlie", "Fantastic content");
+        video3.AddComment("Roland", "Fantastic content. Keept it up bro");
         videos.Add(video3);
 
         Video video4 = new Video("Advanced JavaScript Techniques", "Daniel Lee", 30);
         video4.AddComment("Sophia", "Well explained");
         video4.AddComment("Michael", "Really helpful");
+        video4.AddComment("Michael Jordan", "Really helpful. Thanks man");
         videos.Add(video4);
 
         foreach (Video video in videos)
         {
 
             Console.WriteLine($"Title: {video.Title()} by {video.Author()} - {video.Length()} minutes ");
+            Console.WriteLine($"Comments - {video.NumberOfComment()}");
             video.ShowComments();
             Console.WriteLine("");
         }
