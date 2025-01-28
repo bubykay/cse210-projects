@@ -10,6 +10,8 @@ class Scripture
     foreach (string item in words)
     {
       _words.Add(new Word(item));
+
+
     }
     _reference = reference;
   }
