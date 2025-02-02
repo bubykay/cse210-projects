@@ -1,5 +1,5 @@
 
-using System;
+
 
 class MathAssignment
 {
@@ -9,5 +9,6 @@ class MathAssignment
   public string GetHomeWorkList()
   {
     return $"{_textBookSection} {_problem}";
+
   }
 }
