@@ -1,10 +1,10 @@
 class Assignment
 {
-  private string _stendentName;
-  private string _topic;
+  private string _stendentName = "John Doe";
+  private string _topic = "Some Topic";
 
   public string GetSummary()
   {
-    return "This is the Homework Project.";
+    return $"Student: {_stendentName}, Topic: {_topic}";
   }
 }
