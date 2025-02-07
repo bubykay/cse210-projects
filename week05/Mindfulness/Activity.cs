@@ -37,16 +37,17 @@ class Activity
 
   public void ActivityDetail()
   {
+    Console.Clear();
     Console.WriteLine($"Welcome to the {_name}");
     Console.WriteLine("");
     Console.WriteLine($"{_description}");
     Console.WriteLine("");
   }
 
-  public static void Animate(int seconds = 15)
+  public static void Animate(int seconds = 5)
   {
     int count = 0;
-    while (count < seconds)
+    while (count < seconds - 2)
     {
       Console.Write("|");
       Thread.Sleep(500);
@@ -63,21 +64,57 @@ class Activity
       Console.Write("\\");
       Thread.Sleep(500);
       Console.Write("\b \b"); // Erase the "\"
-
       count++;
     }
+    Console.WriteLine("");
   }
 
-  public void ActivityEnded(int seconds, int animationTime = 15)
+  public void ActivityEnded(int seconds, int animationTime = 3)
   {
+    Console.WriteLine("");
     Console.WriteLine("Well done!!");
     Console.WriteLine("");
     Animate(animationTime);
     Console.WriteLine("");
     Console.WriteLine($"You have complete {seconds} seconds of the {_name}");
-    Thread.Sleep(2000);
+    Thread.Sleep(4000);
   }
 
+  public void ActivityEnded(int animationTime = 3)
+  {
+    Console.WriteLine("");
+    Console.WriteLine("Well done!!");
+    Console.WriteLine("");
+    Animate(animationTime);
+    Console.WriteLine("");
+    Console.WriteLine($"You have completed {_name}");
+    Thread.Sleep(2000);
+  }
+  public static int Duration()
+  {
+    Console.Write("How long in seconds, would you like for your session? ");
+    return int.Parse(Console.ReadLine());
+  }
+
+  public static void GetReady()
+  {
+    Console.Clear();
+    Console.WriteLine("Get ready...");
+    Animate(3);
+    Console.WriteLine("");
+
+  }
+
+  public static void CountDown(int from)
+  {
+    for (int i = from; i > 0; i--)
+    {
+      Console.Write(i);
+      Thread.Sleep(1000);
+      Console.Write("\b \b");
+    }
+    Console.WriteLine("");
+  }
 
 
 }

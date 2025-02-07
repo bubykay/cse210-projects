@@ -28,14 +28,14 @@ class Program
             if (choice == "1")
             {
                 BreathingActivity breathingActivity = new BreathingActivity();
-                breathingActivity.Greetings();
+                breathingActivity.Run();
                 continue;
                 // activity.Start();
             }
             if (choice == "2")
             {
                 ReflectingActivity reflectingActivity = new ReflectingActivity();
-                reflectingActivity.Greetings();
+                reflectingActivity.Run();
                 continue;
                 // activity.Start();
             }
@@ -43,7 +43,7 @@ class Program
             if (choice == "3")
             {
                 ListingActivity listingActivity = new ListingActivity();
-                listingActivity.Greetings();
+                listingActivity.Run();
                 continue;
                 // activity.Start();
             }

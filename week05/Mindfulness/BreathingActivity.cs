@@ -1,47 +1,45 @@
+using System;
 using System.Diagnostics;
+using System.Threading;
 
 class BreathingActivity : Activity
 {
-  public BreathingActivity() : base("Breathing", "This activity will help you relax and focus by working you through breathing in and out slowly. Clear your mind and focus on your breathing.")
+  public BreathingActivity()
+      : base("Breathing", "This activity will help you relax and focus by working you through breathing in and out slowly. Clear your mind and focus on your breathing.")
   {
   }
-  public void Greetings()
+
+  public void Run()
   {
-
     ActivityDetail();
-    Console.Write("How long in seconds would you like for your session ");
-    int seconds = int.Parse(Console.ReadLine());
-    int count = 0;
-    Console.Clear();
-    Console.WriteLine("Get ready...");
-    Console.WriteLine("");
+    int seconds = Duration();
+    GetReady();
+
+    Console.WriteLine();
+
     Stopwatch stopwatch = new Stopwatch();
+    stopwatch.Start();
 
-    int remainder = seconds % 3;
+    Random random = new();
 
-    while (count < seconds)
+    while (stopwatch.Elapsed.TotalSeconds < seconds)
     {
-      int splitTime = (seconds - remainder) / 3 * 1000;
+      int breathIn = random.Next(seconds / 2);
+      Console.WriteLine("");
 
-      if (count >= seconds) break;
       Console.Write("Breathe in...");
+      CountDown(breathIn);
+      Thread.Sleep(breathIn * 1000);
+
       Console.WriteLine("");
-      Thread.Sleep(splitTime / 2);
-      count += splitTime / 2000;
 
-      if (count >= seconds) break;
-      Console.WriteLine("Breathe out...");
-      Console.WriteLine("");
-      Thread.Sleep(splitTime / 2);
-
-      count += splitTime / 2000;
-
+      int breatheOut = random.Next(seconds / 2);
+      Console.Write("Breathe out... ");
+      CountDown(breatheOut);
+      Thread.Sleep(breatheOut * 1000);
     }
 
+    stopwatch.Stop();
     ActivityEnded(seconds, 10);
-
   }
 }
-
-
-
