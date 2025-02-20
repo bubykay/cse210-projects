@@ -13,7 +13,7 @@ public class SimpleGoal : Goal
 
   public override void RecordEvent()
   {
-    CheckCompletion();
+    isComplete = true;
   }
 
   public override bool IsComplete()
@@ -23,16 +23,7 @@ public class SimpleGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    return $"SimpleGoal: {_shortName} {_goalDescription}, {_goalPoint} {(IsComplete() ? "True" : "False")}";
-  }
-
-  private void CheckCompletion()
-  {
-    // Assuming the goal is complete after 10 events for example
-
-    {
-      isComplete = true;
-    }
+    return $"SimpleGoal|{_shortName}|{_goalDescription}|{_goalPoint}|{(IsComplete() ? "True" : "False")}";
   }
 
 
